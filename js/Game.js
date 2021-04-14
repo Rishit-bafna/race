@@ -34,7 +34,8 @@ class Game {
     car2 = createSprite(470,200);
     car2.addImage("car2",car2I);
     car3 = createSprite(670,200);
-    car3.addImage("car3",car3I);
+    car3.setCollider("rectangle",0,0,30,30,0);
+    car3.addImage("car3",car3I)
     car4 = createSprite(870,200);
     car4.addImage("car4",car4I);
     cars = [car1, car2, car3, car4];
@@ -44,44 +45,27 @@ class Game {
  form.hide();
 
     Player.getPlayerInfo();
-    
+    if( car1.isTouching(tyre)){
+      game.end();
+     }
+     
+     if( car2.isTouching(tyre)){
+      game.end();
+     }
+     if(car3.isTouching(tyre)){
+      game.end();
+     }
+     if( car4.isTouching(tyre)){
+      game.end();
+     }
     if(allPlayers !== undefined){
       background(rgb(198,135,103));
       image(track,0,-displayHeight*4,displayWidth,displayHeight*5);
       
-      if(frameCount%80===0){
-        tyres.push(new tyreC,0,random(displayWidth/2+100),10,10);
-     
-      }
-      if(frameCount%120===0){
-        tyres.push(new tyreC,0,random(displayWidth*2+100),10,10);
+ 
+      
     
-      }
-      if(frameCount%70===0){
-        tyres.push(new tyreC,0,random(displayWidth*3+100),10,10);
-    
-      }
 
-      if(car1.x === tyre.x && car1.y === tyre.y){
-        car1.x=270
-        car1.y=200
-        game.end();
-      }
-      if(car2.isTouching(tyre)){
-       car2.x=470
-       car2.y=200
-       game.end();
-     }
-     if(car3.isTouching(tyre)){
-       car3.x=670
-       car3.y=200
-       game.end();
-     }
-     if(car4.isTouching(tyre)){
-       car4.x=870
-       car4.y=200
-       game.end();
-       }
       var index = 0;
 
       var x = 175;

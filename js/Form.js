@@ -29,7 +29,7 @@ class Form {
       player.index = playerCount;
       player.update();
       player.updateCount(playerCount);
-      this.greeting.html("hey there " + player.index);
+      this.greeting.html("hey there " + player.name);
       textSize(32);
       text("press up arrow key to move",displayWidth/3+50,displayHeight/2+25);
       text("try to cover best disptance to win",displayWidth/3+50,displayHeight/2+75)
@@ -38,6 +38,7 @@ class Form {
     this.resetbutton.mousePressed(()=>{
       game.update(0);
       player.updateCount(0);
+      
     })
   }
 }
