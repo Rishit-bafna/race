@@ -29,10 +29,7 @@ function setup(){
   game.getState();
   game.start();
 
-  player1 = database.ref('player1');
-  player2 = database.ref('player2');
-  player3 = database.ref('player3');
-  player4 = database.ref('player4');
+
 }
 
 
@@ -50,14 +47,14 @@ function draw(){
   }
 
   if(frameCount%80===0){
-    tyre = createSprite(0,random(300,500,800),10,10);
+    tyre = createSprite(0,0,10,10);
     tyre.addImage(tyrei);
     tyre.scale=0.05;
     tyre.velocityX=10;
  
   }
   if(frameCount%120===0){
-    tyre1 = createSprite(0,random(200,400,700),10,10);
+    tyre1 = createSprite(0,-300,10,10);
     tyre1.addImage(tyrei);
     tyre1.scale=0.05;
     tyre1.velocityX=10;

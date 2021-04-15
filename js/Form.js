@@ -31,8 +31,9 @@ class Form {
       player.updateCount(playerCount);
       this.greeting.html("hey there " + player.name);
       textSize(32);
-      text("press up arrow key to move",displayWidth/3+50,displayHeight/2+25);
-      text("try to cover best disptance to win",displayWidth/3+50,displayHeight/2+75)
+      text("press up arrow key to move up",displayWidth/3+50,displayHeight/2+25);
+      text("press down arrow key to move down",displayWidth/3+50,displayHeight/2+75);
+      text("try to cover best disptance to win and dont touch the tyres",displayWidth/3+50,displayHeight/2+125)
       this.greeting.position(displayWidth/2, displayHeight/5);
     });
     this.resetbutton.mousePressed(()=>{

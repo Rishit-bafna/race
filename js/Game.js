@@ -45,26 +45,12 @@ class Game {
  form.hide();
 
     Player.getPlayerInfo();
-    if( car1.isTouching(tyre)){
-      game.end();
-     }
-     
-     if( car2.isTouching(tyre)){
-      game.end();
-     }
-     if(car3.isTouching(tyre)){
-      game.end();
-     }
-     if( car4.isTouching(tyre)){
-      game.end();
-     }
+   
     if(allPlayers !== undefined){
       background(rgb(198,135,103));
       image(track,0,-displayHeight*4,displayWidth,displayHeight*5);
-      
- 
-      
-    
+
+     
 
       var index = 0;
 
@@ -84,7 +70,22 @@ class Game {
          camera.position.x = displayWidth/2;
          camera.position.y = cars[index-1].y
         }
-     
+        if(car1.isTouching(tyre)){
+          game.end();
+          gameState = 2;
+        }
+        if(car2.isTouching(tyre)){
+          game.end();
+          gameState = 2;
+        }
+        if(car3.isTouching(tyre)){
+          game.end();
+          gameState = 2;
+        }
+        if(car4.isTouching(tyre)){
+          game.end();
+          gameState =2;
+        }
       }
 
     }
@@ -105,6 +106,6 @@ class Game {
     drawSprites();
   }
   end(){
-    console.log("game ended");
+    text("GAME ENDED",displayWidth/2,displayHeight/2);
   }
 }
